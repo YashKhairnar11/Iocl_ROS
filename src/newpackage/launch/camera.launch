@@ -1,0 +1,3 @@
+<launch>
+   <node name="CameraProcessorNode" pkg="newpackage" type="camera_processor.py" output="screen"/>
+</launch>

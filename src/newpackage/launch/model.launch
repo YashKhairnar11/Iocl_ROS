@@ -1,0 +1,3 @@
+<launch>
+   <node name="ModelProcessorNode" pkg="newpackage" type="model_processor.py" output="screen"/>
+</launch>
