@@ -1,0 +1,133 @@
+# LOGGING ARGS
+logging: 'src/mypackage/logging/cylinder.log'
+mode: 'debug' # info/debug/error
+
+# DICTS ARGS
+queue_size: 10000
+
+
+# CAMERA PROCESSOR ARGS
+resize: 640
+
+# MODEL PROCESSOR ARGS
+# DETECTION
+oring_yolo_name: 'oring_yolo'
+oring_yolo_protocol: 'grpc' # http/grpc
+oring_yolo_ip: 'localhost'
+oring_yolo_port: 8001
+pin_yolo_name: 'pin_yolo'
+pin_yolo_protocol: 'grpc' # http/grpc
+pin_yolo_ip: 'localhost'
+pin_yolo_port: 8001
+oring_efficientad_name: 'oring_efficientad'
+oring_efficientad_protocol: 'grpc' # http/grpc
+oring_efficientad_ip: 'localhost'
+oring_efficientad_port: 8001
+oring_threshold: 1.0
+pin_efficientad_name: 'pin_efficientad'
+pin_efficientad_protocol: 'grpc' # http/grpc
+pin_efficientad_ip: 'localhost'
+pin_efficientad_port: 8001
+pin_threshold: 1.5
+detection_border: 10
+detection_min_bbox_area: 2500
+
+# OCR
+craft_name: 'craft'
+craft_protocol: 'grpc' # http/grpc
+craft_ip: 'localhost' # localhost/192.168.1.166/192.168.1.157
+craft_port: 8001
+recognizor_name: 'recognizor'
+recognizor_protocol: 'grpc' # http/grpc
+recognizor_ip: 'localhost' # localhost/192.168.1.166/192.168.1.157
+recognizor_port: 8001
+ocr_border: 10
+ocr_min_bbox_area: 2500
+
+# COLLATOR ARGS
+collator_sleep: 1
+max_year: 60
+ocr_frame_selection_start: 0.35
+detection_frame_selection_start: 0.25
+notification_border: 10
+notification_url: 'http://localhost:8080/api/dashboard/intermediaryServer/addNotification'
+
+# TRITON MODELS
+# CRAFT ARGS
+craft_log: '/logging/craft.log'
+craft_language:
+    - 'en'
+craft_allowlist: 'ABCD0123456789-~'
+craft_blocklist: 'abcdefghijklmnopqrstuvwxyzEFGHIJKLMNOPQRSTUVWXYZ?"'
+
+# PIN EFFICIENTAD ARGS
+pin_efficientad_log: '/logging/pin_efficientad.log'
+pin_seed: 42
+pin_out_channels: 384
+pin_image_size: 256
+pin_teacher_path: '/weights/pin_teacher.pth'
+pin_student_path: '/weights/pin_student.pth'
+pin_autoencoder_path: '/weights/pin_autoencoder.pth'
+pin_teacher_mean_path: '/weights/pin_teacher_mean.pt'
+pin_teacher_std_path: '/weights/pin_teacher_std.pt'
+pin_q_st_start_path: '/weights/pin_q_st_start.pt'
+pin_q_st_end_path: '/weights/pin_q_st_end.pt'
+pin_q_ae_start_path: '/weights/pin_q_ae_start.pt'
+pin_q_ae_end_path: '/weights/pin_q_ae_end.pt'
+pin_efficientad_device: 'cuda:0'
+
+# ORING EFFICIENTAD ARGS
+oring_efficientad_log: '/logging/oring_efficientad.log'
+oring_seed: 42
+oring_out_channels: 384
+oring_image_size: 256
+oring_teacher_path: '/weights/oring_teacher.pth'
+oring_student_path: '/weights/oring_student.pth'
+oring_autoencoder_path: '/weights/oring_autoencoder.pth'
+oring_teacher_mean_path: '/weights/oring_teacher_mean.pt'
+oring_teacher_std_path: '/weights/oring_teacher_std.pt'
+oring_q_st_start_path: '/weights/oring_q_st_start.pt'
+oring_q_st_end_path: '/weights/oring_q_st_end.pt'
+oring_q_ae_start_path: '/weights/oring_q_ae_start.pt'
+oring_q_ae_end_path: '/weights/oring_q_ae_end.pt'
+oring_efficientad_device: 'cuda:0'
+
+# OCR ARGS
+ocr_log: '/logging/ocr.log'
+ocr_language:
+    - 'en'
+ocr_allowlist: 'ABCD0123456789'
+ocr_blocklist: 'abcdefghijklmnopqrstuvwxyzEFGHIJKLMNOPQRSTUVWXYZ?"'
+
+# RECOGNIZOR ARGS
+recognizor_log: '/logging/recognizor.log'
+recognizor_language:
+    - 'en'
+recognizor_allowlist: 'ABCD0123456789'
+recognizor_blocklist: 'abcdefghijklmnopqrstuvwxyzEFGHIJKLMNOPQRSTUVWXYZ?"'
+
+# ORING YOLO ARGS
+oring_yolo_log: '/logging/oring_yolo.log'
+oring_pt_file: '/weights/oring_yolo.pt'
+oring_onnx_file: '/weights/oring_yolo.onnx'
+oring_engine_file: '/weights/oring_yolo.engine'
+oring_iou: 0.5
+oring_conf: 0.7
+oring_topk: 100
+oring_img_h: 640
+oring_img_w: 640
+oring_img_c: 3
+oring_device: 'cuda:0'
+
+# PIN YOLO ARGS
+pin_yolo_log: '/logging/pin_yolo.log'
+pin_pt_file: '/weights/pin_yolo.pt'
+pin_onnx_file: '/weights/pin_yolo.onnx'
+pin_engine_file: '/weights/pin_yolo.engine'
+pin_iou: 0.5
+pin_conf: 0.9
+pin_topk: 100
+pin_img_h: 128
+pin_img_w: 128
+pin_img_c: 3
+pin_device: 'cuda:0'

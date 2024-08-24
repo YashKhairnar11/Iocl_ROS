@@ -1,0 +1,62 @@
+cameras:
+    - camera_id: '/home/yash/Desktop/iocl/src/newpackage/src/dog.mp4' # 'basler_1' # '/test/ocr_piece1.mp4'
+      name : 'dog'
+      camera_type: 'opencv'
+      model_type: 'detection'
+      frame_skip: 1
+      visualize_or_publish: 'publish'
+      distance: 50
+      disappeared: 2
+      detection_skip: 5
+      fps: 30
+      ip: 'localhost'
+      endpoint: '/camera_1'
+      port: 8552
+      wsip: localhost
+      wsport: 9997
+      required_bboxes: 2
+      priority: 0
+      exposure: 100000
+      gain: 5
+      packet_size: 0
+      resize : 640
+    - camera_id: 'opencv_0' # '/test/ocr_piece2.mp4'
+      name : 'webcam'
+      camera_type: 'opencv'
+      model_type: 'ocr'
+      frame_skip: 1
+      visualize_or_publish: 'publish'
+      distance: 50
+      disappeared: 2
+      detection_skip: 5
+      fps: 30
+      ip: 'localhost'
+      endpoint: '/camera_2'
+      port: 8553
+      wsip: localhost
+      wsport: 9998
+      required_bboxes: 1
+      priority: 1
+      exposure: 100000
+      gain: 10
+      packet_size: 0
+      resize : 640
+    # - camera_id: 'basler_0' # 'basler_0' # '/test/oring_piece1.mp4'
+    #   camera_type: 'basler'
+    #   model_type: 'detection'
+    #   frame_skip: 1
+    #   visualize_or_publish: 'publish'
+    #   distance: 50
+    #   disappeared: 2
+    #   detection_skip: 1
+    #   fps: 30
+    #   ip: 'localhost'
+    #   endpoint: '/camera_3'
+    #   port: 8554
+    #   wsip: localhost
+    #   wsport: 9999
+    #   required_bboxes: 1
+    #   priority: 0
+    #   exposure: 100000
+    #   gain: 10
+    #   packet_size: 8000
