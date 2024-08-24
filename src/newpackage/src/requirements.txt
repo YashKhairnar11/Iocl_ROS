@@ -1,0 +1,17 @@
+opencv-python
+opencv-contrib-python
+easyocr
+ultralytics
+redis
+tritonclient[all]
+Pillow
+tqdm
+numpy
+greenlet
+Flask
+PyYAML
+onnx
+onnxsim
+onnxruntime
+onnxruntime-gpu
+pypylon
